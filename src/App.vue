@@ -1,26 +1,28 @@
 <script>
-  export default {
-    data() {
-      return {
-        starsCount: 800,
-        distance: 900
-      }
-    },
-    mounted() {
-      let startNode = Array.from(this.$refs.starsRef.children);
-      startNode.forEach((item) => {
-        let speed = 0.2 + Math.random() * 1;
-        let thisDistance = this.distance + Math.random() * 300;
-        item.style.transformOrigin = `0 0 ${thisDistance}px`;
-        item.style.transform = `
-          translate3d(0, 0, -${thisDistance}px)
-          rotateY(${Math.random()*360}deg)
-          rotateX(${Math.random()*-50}deg)
-          scale(${speed},${speed})
-          `;
-      }) 
+import HeartComp from "./Component/HeartComp.vue"
+export default {
+  components: { HeartComp },
+  data() {
+    return {
+      starsCount: 800,
+      distance: 900
     }
+  },
+  mounted() {
+    let startNode = Array.from(this.$refs.starsRef.children);
+    startNode.forEach((item) => {
+      let speed = 0.2 + Math.random() * 1;
+      let thisDistance = this.distance + Math.random() * 300;
+      item.style.transformOrigin = `0 0 ${thisDistance}px`;
+      item.style.transform = `
+        translate3d(0, 0, -${thisDistance}px)
+        rotateY(${Math.random()*360}deg)
+        rotateX(${Math.random()*-50}deg)
+        scale(${speed},${speed})
+        `;
+    }) 
   }
+}
 </script>
 
 <template>
@@ -35,6 +37,10 @@
     <P class="word">
       致世界上最可爱的天使，倩倩：
     </P>
+    <P class="word2">
+      请收下我对你满满的爱！！
+    </P>
+    <heart-comp class="heart"></heart-comp>
   </div>
 </template>
 
@@ -90,6 +96,27 @@ svg {
   animation-fill-mode: forwards;
 }
 
+
+.word2 {
+  font-size:x-large;
+  font-style:oblique;
+  position: absolute;
+  animation: transfer2 3s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+  color: rgba(0, 0, 0, 0);
+}
+
+.heart{
+  animation: sport 1s infinite;
+}
+.heart::after{
+ animation:  fadeIn 4s forwards;
+}
+.heart::before{
+ animation:  fadeIn 4s forwards;
+}
+
 @keyframes rotate {
   0% {
     transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(0);
@@ -107,6 +134,17 @@ svg {
   }
   to {
     margin-bottom: 70vh;
+    color: white;
+  }
+}
+
+  @keyframes transfer2 {
+  from {
+    margin-bottom: 30vh;
+    color: rgba(0, 0, 0, 0);
+  }
+  to {
+    margin-bottom: 30vh;
     color: white;
   }
 }
