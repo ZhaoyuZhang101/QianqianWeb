@@ -1,42 +1,52 @@
-<template>
-    <div class="heart"></div>
+<script setup>
+import { ref } from 'vue';
+const count = ref(0);
+function reaction() {
+    count.value ++;
+}
+</script>
 
+<template>
+    <div class="hrt" @click="reaction">
+        <div class="lft"></div>
+        <div class="rgt"></div>
+    </div>
+    <div>{{count}}</div>
 </template>
 
 <style>
 
-.heart {
+.hrt {
     position: absolute;
-    width: 300px;
-    height: 270px;
+    width: 17.5vh;
+    height: 17vh;
+    animation: sport 1s infinite;
 }
-.heart:before, .heart:after {
+.lft, .rgt {
     position: absolute;
     content: "";
-    left: 150px;
+    left: 2vh;
     top:0;
-    width: 150px;
-    height: 240px;
+    width: 10vh;
+    height: 15vh;
     background-color: #ff0048;
-    border-radius: 150px 150px 0 0;
+    border-radius: 30vh 30vh 0 0;
     transform: rotate(-45deg);
-    transform-origin: 0 100%;
     background-blend-mode: color;
 }
-.heart:after {
-    left:0;
+.rgt {
+    left:5.6vh;
     transform: rotate(45deg);
-    transform-origin: 100% 100%;
 }
 
 @keyframes sport {
-    0% {transform: scale(1);}
-    10% {transform: scale(1.5);}
-    20% {transform: scale(1);}
+    0% {transform: translateY(0) scale(1);}
+    10% {transform: translateY(1vh) scale(1.5);}
+    20% {transform: translateY(0) scale(1);}
     
-    30% {transform: scale(1);}
-    40% {transform: scale(1.5);}
-    50% {transform: scale(1);}
+    30% {transform: translateY(0) scale(1);}
+    40% {transform: translateY(1vh) scale(1.5);}
+    50% {transform: translateY(0) scale(1);}
 }
 
 @keyframes fadeIn {
@@ -45,5 +55,9 @@
     61% {background-color: #ff0048;}
     100% {background-color: #ff0048;}
 
+}
+.hrt:hover{
+  animation: sport 0.5s infinite;
+  
 }
 </style>

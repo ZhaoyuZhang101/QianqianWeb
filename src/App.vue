@@ -37,10 +37,11 @@ export default {
     <P class="word">
       致世界上最可爱的天使，倩倩：
     </P>
+
+    <heart-comp class="heart"></heart-comp>
     <P class="word2">
       请收下我对你满满的爱！！
     </P>
-    <heart-comp class="heart"></heart-comp>
   </div>
 </template>
 
@@ -105,16 +106,7 @@ svg {
   animation-delay: 3s;
   animation-fill-mode: forwards;
   color: rgba(0, 0, 0, 0);
-}
-
-.heart{
-  animation: sport 1s infinite;
-}
-.heart::after{
- animation:  fadeIn 4s forwards;
-}
-.heart::before{
- animation:  fadeIn 4s forwards;
+  height: 2vh;
 }
 
 @keyframes rotate {
@@ -140,11 +132,11 @@ svg {
 
   @keyframes transfer2 {
   from {
-    margin-bottom: 30vh;
+    margin-bottom: 20vh;
     color: rgba(0, 0, 0, 0);
   }
   to {
-    margin-bottom: 30vh;
+    margin-bottom: 20vh;
     color: white;
   }
 }
