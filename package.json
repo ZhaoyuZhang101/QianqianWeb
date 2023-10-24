@@ -7,11 +7,13 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "upload": "node ./uploadToGit.js"
   },
   "dependencies": {
     "vue": "^3.3.4"
   },
+  "type": "module",
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.3.3",
     "@vitejs/plugin-vue": "^4.3.4",

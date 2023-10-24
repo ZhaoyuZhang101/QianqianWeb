@@ -1,17 +1,11 @@
 <script setup>
-import { ref } from 'vue';
-const count = ref(0);
-function reaction() {
-    count.value ++;
-}
 </script>
 
 <template>
-    <div class="hrt" @click="reaction">
+    <div class="hrt">
         <div class="lft"></div>
         <div class="rgt"></div>
     </div>
-    <div>{{count}}</div>
 </template>
 
 <style>

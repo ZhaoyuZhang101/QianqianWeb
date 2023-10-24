@@ -13,5 +13,9 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  }
+  },
+  css: [
+    './src/assets/text/text.css'
+  ]
 })
+

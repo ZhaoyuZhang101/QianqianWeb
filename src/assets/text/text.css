@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "ACG1";
+    src: url('/src/assets/text/ACG1.ttf');
+}
+@font-face {
+    font-family: ACG2;
+    src: url('/src/assets/text/ACG2.ttf');
+}
+
+@font-face {
+    font-family: ACG3;
+    src: url('/src/assets/text/ACG3.ttf');
+}
+
+@font-face {
+    font-family: ACG4;
+    src: url('/src/assets/text/ACG4.ttf');
+}
